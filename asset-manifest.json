@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/AlexandraTimo/react-mambaRoll.git/static/css/main.37c9f594.css",
+    "main.js": "/AlexandraTimo/react-mambaRoll.git/static/js/main.bd1b2825.js",
+    "static/js/592.5495499a.chunk.js": "/AlexandraTimo/react-mambaRoll.git/static/js/592.5495499a.chunk.js",
+    "index.html": "/AlexandraTimo/react-mambaRoll.git/index.html",
+    "main.37c9f594.css.map": "/AlexandraTimo/react-mambaRoll.git/static/css/main.37c9f594.css.map",
+    "main.bd1b2825.js.map": "/AlexandraTimo/react-mambaRoll.git/static/js/main.bd1b2825.js.map",
+    "592.5495499a.chunk.js.map": "/AlexandraTimo/react-mambaRoll.git/static/js/592.5495499a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.37c9f594.css",
+    "static/js/main.bd1b2825.js"
+  ]
+}
