@@ -12,7 +12,7 @@ import orc from "../OrderConfirm/OrderConfirm.module.css";
 const OrderConfirm = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { emptyCart } = useCart();
+  const { emptyCart, items,cartTotal  } = useCart();
   const formData = location.state?.formData || {};
 
   const [showModal, setShowModal] = useState(false); // Состояние для отображения модального окна
@@ -52,6 +52,26 @@ useEffect(() => {
       <p>Комментприи: {formData.comments}</p>
 
       {/* Другие поля формы */}
+
+      <table>
+                  <tbody>
+                    {items.map((item) => (
+                      <tr key={item.id}>
+                        <td>{item.title}</td>
+                        <td>
+                          {item.price}&#8381; x {item.quantity}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colSpan="2">Итого</td>
+                      <td>{cartTotal} &#8381;</td>
+                    </tr>
+                  </tfoot>
+                </table>
+
 
        </div>
       {/* Показываем модальное окно, если showModal === true */}
