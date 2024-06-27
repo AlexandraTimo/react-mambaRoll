@@ -1,0 +1,64 @@
+.accordion-button{
+    border:none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+   justify-content: space-between;
+    padding: 15px 24px 15px 24px;
+    border: 1px solid transparent;
+    width: 100%;
+
+}
+
+.accordion-button:hover,.accordion-button:focus {
+    border: 1px solid var(--green);
+    border-radius: 8px;
+}
+.accordion-button:hover .arrow-button path{
+    fill:var(--green)
+}
+.accordion-button:hover span{
+    color:var(--green)
+}
+
+.accordion-button:focus{
+    border: 1px solid var(--lightgreen);
+}
+
+.acordion-body{
+    max-height:0px;
+    opacity: 0;
+    visibility: hidden;
+   overflow-y: scroll;
+   transition: max-height .4s ease-in-out 0s;
+
+}
+.acordion-body.active{
+    opacity: 1;
+    visibility: visible;
+    max-height:300px;
+}
+
+.accordion-button svg{
+    transition: .4s ease-in-out 0s;
+    transform: rotate(-90deg);
+}
+.accordion-button .active{
+transform: rotate(0deg);
+}
+
+.accordion-button span{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    color: var(--black);
+    font-family: inherit;
+
+}
+
+.acordion-body li{
+padding: 15px;
+}
+

@@ -1,29 +1,36 @@
 import "./Header.css";
 import logo from "../../img/logo.png";
 import React, { useState } from "react";
-
+// import { links } from "../../Data/data";
+// import Navlinks from "../Header/Navlinks";
+import { Button } from "./Button";
+import { Link} from "react-router-dom";
 
 export default function Header() {
   const [isOpen, setOpen] = useState(false);
 
- const burgerMenuOpen = ()=>{
-  setOpen(true);
-   }
+  const burgerMenuOpen = () => {
+    setOpen(true);
+  };
 
-   const burgerMenuClose = event => {
-      // 👇️ toggle isActive state on click
-      setOpen(current => !current);
-    };
+  const burgerMenuClose = (event) => {
+    // 👇️ toggle isActive state on click
+    setOpen((current) => !current);
+  };
 
   return (
     <div className="header">
       <div className="header__body">
         <div className="header_container_menu">
-          <img src={logo} alt="logo" />
-
-
-          <nav className={`header__menu ${isOpen ? "active" : ""}  onClick = {burgerMenuClose}`}>
-            <svg className="close" onClick={burgerMenuClose}
+        <Link to="/Home">  <img src={logo} alt="logo"/></Link>
+          <nav
+            className={`header__menu ${
+              isOpen ? "active" : ""
+            }  onClick = {burgerMenuClose}`}
+          >
+            <svg
+              className="close"
+              onClick={burgerMenuClose}
               width="40"
               height="40"
               viewBox="0 0 40 40"
@@ -37,20 +44,15 @@ export default function Header() {
             </svg>
 
             <ul className="header_list">
-              <li>
-                <a className="phone__link" href="#">
-                  Меню
-                </a>
-              </li>
-              <li>
-                <a href="#">Акции</a>
-              </li>
-              <li>
-                <a href="#">О доставке</a>
-              </li>
-              <li>
-                <a href="#">Контакты</a>
-              </li>
+            <Button />
+<li> <Link  className="header__link" to="/actions" > Акции </Link></li>
+<li> <Link className="header__link" to="/actions"  > О доставке </Link></li>
+<li> <Link  className="header__link" to="/contacts" > Контакты </Link></li>
+              {/* {links.map((link) => (
+                <Navlinks key={link.title} {...link} />
+              ))} */}
+
+
             </ul>
           </nav>
         </div>
