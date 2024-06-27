@@ -1,10 +1,14 @@
 import "./Header.css";
 import logo from "../../img/logo.png";
 import React, { useState } from "react";
-// import { links } from "../../Data/data";
-// import Navlinks from "../Header/Navlinks";
+import { Headerlink  } from "../../Data/data";
+import Navlinks from "../Header/Navlinks";
 import { Button } from "./Button";
-import { Link} from "react-router-dom";
+import {Link} from "react-router-dom";
+
+// для корзины
+import { useCart } from "react-use-cart";
+
 
 export default function Header() {
   const [isOpen, setOpen] = useState(false);
@@ -18,11 +22,17 @@ export default function Header() {
     setOpen((current) => !current);
   };
 
+// для корзины
+const { totalItems } = useCart();
+// const [cartOpen, setCartOpen] = useState(false);
+
+
   return (
     <div className="header">
+
       <div className="header__body">
         <div className="header_container_menu">
-        <Link to="/Home">  <img src={logo} alt="logo"/></Link>
+        <Link to="/">  <img src={logo} alt="logo"/></Link>
           <nav
             className={`header__menu ${
               isOpen ? "active" : ""
@@ -45,30 +55,32 @@ export default function Header() {
 
             <ul className="header_list">
             <Button />
-<li> <Link  className="header__link" to="/actions" > Акции </Link></li>
-<li> <Link className="header__link" to="/actions"  > О доставке </Link></li>
-<li> <Link  className="header__link" to="/contacts" > Контакты </Link></li>
-              {/* {links.map((link) => (
-                <Navlinks key={link.title} {...link} />
-              ))} */}
+{/* <li> <Link  className="header__link" to="/actions" > Акции </Link></li>
+<li> <Link className="header__link" to="/delivery"  > О доставке </Link></li>
+<li> <Link  className="header__link" to="/contacts" > Контакты </Link></li> */}
+              {Headerlink.map((headerlinks) => (
+                <Navlinks key={headerlinks.name} {...headerlinks} />
+              ))}
 
 
             </ul>
           </nav>
         </div>
 
-        <a href="#" className="header_container_cart_tel_decstop">
+        <Link to="/" className="header_container_cart_tel_decstop">
           +7 861 945 28 28
-        </a>
+        </Link>
 
         <div className="header_container_cart">
-          <a href="#" className="header_container_cart_tel">
+          <Link to="/" className="header_container_cart_tel">
             +7 861 945 28 28
-          </a>
+          </Link>
           <div class="header_burger" onClick={burgerMenuOpen}>
             <span></span>
           </div>
-          <a href="#">
+          {/* корзина */}
+
+          <Link className="cart_link"  to="/Cart" >
             <svg
               className="cart_svg"
               width="40"
@@ -83,7 +95,13 @@ export default function Header() {
                 fill="white"
               />
             </svg>
-          </a>
+            {totalItems > 0 && (
+              <div className="items-count">
+                <span>{totalItems}</span>
+              </div>
+            )}
+          </Link>
+
         </div>
       </div>
     </div>

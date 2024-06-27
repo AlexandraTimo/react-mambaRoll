@@ -36,6 +36,8 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  background: #F8F8F8;
+
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
@@ -71,6 +73,7 @@ ul {
 
 html{
 scroll-behavior: smooth;
+height: 100%;
 }
 
 /* .font-linkBold {
@@ -113,4 +116,11 @@ scroll-behavior: smooth;
   .container {
     width: 100%;
     height: auto;
+  }
+
+  h1{
+font-size: 34px;
+font-weight: 600;
+line-height: 40px;
+letter-spacing: 0em;
   }

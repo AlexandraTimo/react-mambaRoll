@@ -1,9 +1,10 @@
+import { NavLink } from "react-router-dom";
+
 export default function Navlinks(props) {
   return (
-    <li >
-      <a className="header__link" href="#">
-        {props.title}
-      </a>
-    </li>
+<li> <NavLink className= "header__link" to={props.path}> {props.name}</NavLink></li>
+
   );
 }
+
+

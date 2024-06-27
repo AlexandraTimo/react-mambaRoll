@@ -1,0 +1,56 @@
+.main_card{
+width: 100%;
+height: auto;
+padding-bottom: 100px;
+
+}
+
+.main_card_wrapper{
+max-width: 1320px;
+margin: 0 auto;
+height: auto;
+margin-top: 80px;
+}
+
+.baked_wrapper{
+    margin-top: 80px;
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .main_card_wrapper {
+        max-width: 100%;
+        padding: 0px 20px 0px 20px;
+        margin-top: 60px;
+      }
+      .baked_wrapper{
+        margin-top: 60px;
+    }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .main_card_wrapper {
+        max-width: 100%;
+        padding: 0 57px 0px 57px;
+        margin-top: 60px;
+      }
+      .baked_wrapper{
+        margin-top: 60px;
+    }
+
+}
+
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .main_card_wrapper {
+        max-width: 100%;
+        padding: 0px 70px 0px 70px;
+        margin-top: 60px;
+      }
+      .baked_wrapper{
+        margin-top: 60px;
+    }
+
+}
+

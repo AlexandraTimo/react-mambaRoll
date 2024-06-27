@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./Button.css";
 import { accordionMenu } from "../../Data/data";
+import { Link } from "react-router-dom";
 
 export function ButtonListMenu(props) {
     return (
       <li >
-        <a className="header__link" href="#">
+        <Link className="header__link" to = {props.path}>
           {props.a}
-        </a>
+        </Link>
       </li>
     );
   }

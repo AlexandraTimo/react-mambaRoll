@@ -1,15 +1,26 @@
 import fr from "./First.module.css";
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect } from "react";
+import {NavLink, useLocation } from 'react-router-dom';
 
 
 export default function First(props) {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        const topOffset = element.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: topOffset, behavior: "smooth" });
+      }
+    }
+  }, [location]);
   return (
     <div className={fr.first}>
       <div className={fr.first__wrapper}>
         <ul className={fr.menu_list}>
           <li className={fr.first__list_li}>
-            <a href="#" className={fr.men_link} >
+            <NavLink className={fr.men_link}>
               <span>Ролы</span>
               <svg
                 width="12"
@@ -25,15 +36,27 @@ export default function First(props) {
                   fill="#151515"
                 />
               </svg>
-            </a>
+            </NavLink>
             <ul className={fr.first_wrapper_submenu}>
               <li>
-                <NavLink to="#" activeStyle={{ color: "red" }}>
+                <NavLink className={fr.link}  to="/Home#cold"
+                  spy={true}
+                  smooth={true}
+                  offset={-50}
+                  duration={500}>
                   Холодные ролы
                 </NavLink>
               </li>
               <li>
-                <NavLink to="#">Запеченые ролы</NavLink>
+                <NavLink className={fr.link}
+                  to="/Home#baked"
+                  spy={true}
+                  smooth={true}
+                  offset={-50}
+                  duration={500}
+                >
+                  Запеченые ролы
+                </NavLink>
               </li>
               <li>
                 <NavLink to="#">Темпура ролы</NavLink>
@@ -41,31 +64,31 @@ export default function First(props) {
             </ul>
           </li>
           <li>
-            <a href="#">Сеты</a>
+            <NavLink to="#">Сеты</NavLink>
           </li>
           <li>
-            <a href="#">Суши</a>
+            <NavLink to="#">Суши</NavLink>
           </li>
           <li>
-            <a href="#">Маки</a>
+            <NavLink to="#">Маки</NavLink>
           </li>
           <li>
-            <a href="#">WOK</a>
+            <NavLink to="#">WOK</NavLink>
           </li>
           <li>
-            <a href="#">Супы</a>
+            <NavLink to="#">Супы</NavLink>
           </li>
           <li>
-            <a href="#">Закуски</a>
+            <NavLink to="#">Закуски</NavLink>
           </li>
           <li>
-            <a href="#">Салаты</a>
+            <NavLink to="#">Салаты</NavLink>
           </li>
           <li>
-            <a href="#">Напитки</a>
+            <NavLink to="#">Напитки</NavLink>
           </li>
           <li className={fr.first__list_li}>
-            <a href="#" className={fr.men_link} >
+            <NavLink href="#" className={fr.men_link}>
               <span>Дополнительно</span>
               <svg
                 width="12"
@@ -81,7 +104,7 @@ export default function First(props) {
                   fill="#151515"
                 />
               </svg>
-            </a>
+            </NavLink>
             <ul className={fr.first_wrapper_submenu}>
               <li>
                 <NavLink to="#" activeStyle={{ color: "red" }}>
@@ -96,8 +119,6 @@ export default function First(props) {
               </li>
             </ul>
           </li>
-
-
         </ul>
       </div>
     </div>

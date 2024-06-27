@@ -1,0 +1,288 @@
+.checkContainer{
+    max-width: 1320px;
+    margin: 0 auto;
+    height: auto;
+    margin-top: 200px;
+    margin-bottom:100px;
+}
+.checkContainer_flex{
+    display: flex;
+     gap: 136px;
+}
+.checkContainer_flex,.form{
+   display: flex;
+    }
+    .checkContainer_flex{
+        margin-top: 40px;
+    }
+    .checkContainer_flex_info{
+max-width: 424px;
+
+    }
+    .checkContainer_flex_info > p,  .ul_items_div > p{
+        font-family: 'Inter', sans-serif;
+        font-size: 26px;
+        color:  #151515;
+        margin-bottom: 24px
+        ;
+    }
+
+
+    .form{
+        flex-direction: column;
+    }
+
+    .form_flex{
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .checkContainer_flex_info form input,form textarea {
+border-radius: 8px;
+border: 1px solid #D0D0D0;
+padding: 8px 12px;
+outline: none;
+    }
+    .checkContainer_flex_info form input:hover,form textarea:hover {
+        border: 1px solid #151515;
+    }
+    .checkContainer_flex_info form input:focus,form textarea:focus {
+        border: 2px solid #0E6300;
+    }
+
+
+    .checkContainer_flex_info form >input{
+        margin-bottom: 12px;
+    }
+    .itemTitle{
+        max-width: 240px;
+    }
+    .ul_items_div{
+        border-radius: 20px;
+        padding: 30px 113px;
+        background-color: #FFFFFF;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .td_image{
+        object-fit: cover;
+        border-radius: 6px;
+
+    }
+    .ul_items_div table img{
+        width: 50px;
+        height: 50px;
+        display: block;
+        object-fit: contain;
+
+    }
+    .ul_items_div table{
+        border-spacing: 20px;
+        table-layout: fixed;
+        height: max-content;
+    }
+
+    .td_image{
+       margin-right: 20px;
+    }
+
+    tfoot tr{
+        font-family: inherit;
+    font-weight: 600;
+    font-size: 16px;
+    color: #151515;
+    }
+
+    .checkContainer_flex_text{
+        display: flex;
+        flex-direction: column;
+        margin-top: 32px;
+    }
+    .checkContainer_flex_text h2, .radioContainer h2, .deliveryContainer h2{
+        margin-bottom: 24px;
+    }
+    .checkContainer_flex_text >p,.radioContainer input[type="radio"],.radioContainer_form_flex input  {
+        margin-bottom: 12px;
+    }
+
+    .radioContainer_form_flex{
+width: 424px;
+
+    }
+    .radioContainer_form_flex input, .radioContainer_form_flex textarea{
+        width: 100%;
+    }
+
+    .radioContainer_form_flex textarea{
+        height: 89px;
+
+    }
+    .button_success{
+        background: #0E6300;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFFFFF;
+    border-radius: 8px;
+    border: transparent;
+    padding: 12px 24px;
+    font-family: inherit;
+    max-width: 424px;
+    text-align: center;
+    transition: .4s ease-in-out 0s;
+    cursor: pointer;
+    margin-top: 32px;
+    }
+
+    .button_success:hover{
+        background: var(--lightgreen);
+        color: #151515;
+    }
+    .button_success:focus{
+        border: 2px solid var(--lightgreen);
+    }
+    .button_success:disabled {
+        background-color: #cccccc; /* Серый цвет для неактивной кнопки */
+        cursor: not-allowed; /* Курсор неактивный */
+      }
+      .checkboxContainer{
+        margin-top: 10px;
+      }
+
+      .error {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+
+
+      .deliveryContainer{
+        display: flex;
+        flex-direction: column;
+        margin-top: 32px;
+
+      }
+
+      .deliveryContainer_flex{
+        display: grid;
+        grid-template-columns: repeat(3,138px);
+        grid-gap: 5px;
+        margin-top: 12px;
+
+      }
+      /* Адаптив */
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+
+    .checkContainer{
+        max-width: 100%;
+        padding: 0px 20px 0px 20px;
+      margin-top: 125px;
+      margin-bottom: 100px;
+    }
+    .checkContainer_flex,.form{
+        display: flex;
+        flex-direction: column;
+    }
+        .checkContainer_flex{
+            display: flex;
+           gap: 34px;
+        }
+
+         .ul_items_div{
+            order:-1;
+            padding: 15px;
+
+         }
+         .form_flex{
+            display: flex;
+            justify-content: space-between;
+          flex-direction: column;
+          gap: 12px;
+
+        }
+
+        .radioContainer_form_flex{
+            width: 100%;
+
+                }
+                .ul_items_div table img{
+                    width: 100%;
+                    height: 100%;
+
+
+                }
+
+                .deliveryContainer_flex{
+                    grid-template-columns: 1fr;
+                    grid-gap: 10px;
+
+                  }
+
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .checkContainer{
+        max-width: 100%;
+        padding: 0px 57px 0px 57px;
+      margin-top: 125px;
+      margin-bottom: 100px;
+    }
+    .checkContainer_flex,.form{
+        display: flex;
+        flex-direction: column;
+    }
+        .checkContainer_flex{
+            display: flex;
+           gap: 34px;
+        }
+
+         .ul_items_div{
+            order:-1;
+            padding: 15px;
+
+         }
+         /* .form_flex{
+            display: flex;
+            justify-content: space-between;
+          flex-direction: column;
+          gap: 12px;
+
+        } */
+
+        .radioContainer_form_flex{
+            width: 100%;
+
+                }
+                .ul_items_div{
+                    padding-top: 30px;
+                }
+                .checkContainer_flex_info{
+                    max-width: 420px;
+                }
+
+}
+
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .checkContainer{
+        max-width: 100%;
+        padding: 0px 70px 0px 70px;
+      margin-top: 125px;
+      margin-bottom: 100px;
+    }
+
+    .ul_items_div{
+        padding: 0px;
+    }
+}

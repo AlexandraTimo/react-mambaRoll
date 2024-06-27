@@ -1,8 +1,8 @@
-export const links = [
-  { id: 1, title: "Акции" },
-  { id: 2, title: "О доставке" },
-  { id: 3, title: "Контакты" },
-];
+// export const links = [
+//   { id: 1, title: "Акции" },
+//   { id: 2, title: "О доставке" },
+//   { id: 3, title: "Контакты" },
+// ];
 
 export const firstLinks = [
   { id: 1, title: "Ролы" },
@@ -32,5 +32,25 @@ export const accordionMenu = [
   {a: "Напитик"},
   {a: "Дополнительно"},
 
+];
+
+
+export const Headerlink = [
+{name: "  Акции ",
+path: '/actions'
+},
+
+{name: "  О доставке",
+path: '/delivery'
+},
+
+{name: "  Контакты",
+path: '/contacts'
+}
 
 ];
+
+
+
+
+//
